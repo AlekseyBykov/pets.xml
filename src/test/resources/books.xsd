@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="catalog" type="catalogType"/>
+  <xs:complexType name="priceType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="currency" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="bookType">
+    <xs:sequence>
+      <xs:element name="isbn">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="978-0-1338-5904-1"/>
+            <xs:enumeration value="978-1-4302-6827-7"/>
+            <xs:enumeration value="978-1-78847-448-1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="author">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Thomas Erl"/>
+            <xs:enumeration value="Josh Juneau"/>
+            <xs:enumeration value="Enrico Pirozzi"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="title">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Next Generation SOA"/>
+            <xs:enumeration value="Java 8 Recipes"/>
+            <xs:enumeration value="PostgreSQL 10 High Performance"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="genre"/>
+      <xs:element type="priceType" name="price"/>
+      <xs:element name="publish_date">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="2014-10-31"/>
+            <xs:enumeration value="2014-10-16"/>
+            <xs:enumeration value="2018-04-16"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="publisher">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Prentice Hall"/>
+            <xs:enumeration value="Apress"/>
+            <xs:enumeration value="Packt"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="catalogType">
+    <xs:sequence>
+      <xs:element type="bookType" name="book" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

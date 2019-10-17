@@ -5,6 +5,7 @@ package alekseybykov.portfolio.xml.dom;
 
 import alekseybykov.portfolio.xml.XmlElements;
 import lombok.SneakyThrows;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.w3c.dom.Document;
@@ -27,17 +28,60 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DisplayName("Tests for parsing document by using DOM parser")
 class DOMParserTest {
 
-    private final File xmlFile = Paths.get("src", "test", "resources", "books.xml").toFile();
+    private static Document document;
+
+    @BeforeAll
+    @SneakyThrows
+    private static void loadDocument() {
+        File xmlFile = Paths.get("src", "test", "resources", "xml_with_whitespaces.xml").toFile();
+        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+
+        // all the document loaded in memory
+        document = documentBuilder.parse(xmlFile);
+    }
+
+    @Test
+    @SneakyThrows
+    @DisplayName("Obtain root element")
+    void testObtainRootElement() {
+        Element root = document.getDocumentElement();
+
+        assertEquals(XmlElements.CATALOG.getName(), root.getNodeName());
+    }
+
+    @Test
+    @SneakyThrows
+    @DisplayName("Traversing XML with whitespaces")
+    void testTraverseXmlDocumentWithWhitespaces() {
+        Element root = document.getDocumentElement();
+
+        NodeList nodeList = root.getChildNodes();
+
+        assertEquals(7, nodeList.getLength());
+
+        assertEquals("#text", nodeList.item(0).getNodeName());
+
+        assertEquals(XmlElements.BOOK.getName(), nodeList.item(1).getNodeName());
+        assertTrue(nodeList.item(1).getNodeType() == Node.ELEMENT_NODE);
+
+        assertEquals("#text", nodeList.item(2).getNodeName());
+
+        assertEquals(XmlElements.BOOK.getName(), nodeList.item(3).getNodeName());
+        assertTrue(nodeList.item(3).getNodeType() == Node.ELEMENT_NODE);
+
+        assertEquals("#text", nodeList.item(4).getNodeName());
+
+        assertEquals(XmlElements.BOOK.getName(), nodeList.item(5).getNodeName());
+        assertTrue(nodeList.item(5).getNodeType() == Node.ELEMENT_NODE);
+
+        assertEquals("#text", nodeList.item(6).getNodeName());
+    }
 
     @Test
     @SneakyThrows
     @DisplayName("Obtain value of element")
     void testReadElementValue() {
-
-        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-        Document document = documentBuilder.parse(xmlFile);
-
         Element root = document.getDocumentElement();
 
         assertEquals(XmlElements.CATALOG.getName(), root.getNodeName());

@@ -28,24 +28,28 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DisplayName("Tests for parsing document by using DOM parser")
 class DOMParserTest {
 
-    private static Document document;
+    private static Document documentWithWhitespaces;
+    private static Document documentWithoutWhitespaces;
 
     @BeforeAll
     @SneakyThrows
     private static void loadDocument() {
-        File xmlFile = Paths.get("src", "test", "resources", "xml_with_whitespaces.xml").toFile();
+        File documentWithWhitespacesFile = Paths.get("src", "test", "resources", "xml_with_whitespaces.xml").toFile();
+        File documentWithoutWhitespacesFile = Paths.get("src", "test", "resources", "xml_without_whitespaces.xml").toFile();
+
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
 
         // all the document loaded in memory
-        document = documentBuilder.parse(xmlFile);
+        documentWithWhitespaces = documentBuilder.parse(documentWithWhitespacesFile);
+        documentWithoutWhitespaces = documentBuilder.parse(documentWithoutWhitespacesFile);
     }
 
     @Test
     @SneakyThrows
     @DisplayName("Obtain root element")
     void testObtainRootElement() {
-        Element root = document.getDocumentElement();
+        Element root = documentWithWhitespaces.getDocumentElement();
 
         assertEquals(XmlElements.CATALOG.getName(), root.getNodeName());
     }
@@ -54,7 +58,7 @@ class DOMParserTest {
     @SneakyThrows
     @DisplayName("Traversing XML with whitespaces")
     void testTraverseXmlDocumentWithWhitespaces() {
-        Element root = document.getDocumentElement();
+        Element root = documentWithWhitespaces.getDocumentElement();
 
         NodeList nodeList = root.getChildNodes();
 
@@ -80,9 +84,29 @@ class DOMParserTest {
 
     @Test
     @SneakyThrows
+    @DisplayName("Traversing XML without whitespaces")
+    void testTraverseXmlDocumentWithoutWhitespaces() {
+        Element root = documentWithoutWhitespaces.getDocumentElement();
+
+        NodeList nodeList = root.getChildNodes();
+
+        assertEquals(3, nodeList.getLength());
+
+        assertEquals(XmlElements.BOOK.getName(), nodeList.item(0).getNodeName());
+        assertTrue(nodeList.item(0).getNodeType() == Node.ELEMENT_NODE);
+
+        assertEquals(XmlElements.BOOK.getName(), nodeList.item(1).getNodeName());
+        assertTrue(nodeList.item(1).getNodeType() == Node.ELEMENT_NODE);
+
+        assertEquals(XmlElements.BOOK.getName(), nodeList.item(2).getNodeName());
+        assertTrue(nodeList.item(2).getNodeType() == Node.ELEMENT_NODE);
+    }
+
+    @Test
+    @SneakyThrows
     @DisplayName("Obtain value of element")
     void testReadElementValue() {
-        Element root = document.getDocumentElement();
+        Element root = documentWithWhitespaces.getDocumentElement();
 
         assertEquals(XmlElements.CATALOG.getName(), root.getNodeName());
 

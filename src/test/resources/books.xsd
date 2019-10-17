@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="catalog" type="catalogType"/>
-  <xs:complexType name="priceType">
-    <xs:simpleContent>
-      <xs:extension base="xs:string">
-        <xs:attribute type="xs:string" name="currency" use="optional"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
   <xs:complexType name="bookType">
     <xs:sequence>
       <xs:element name="isbn">
@@ -38,7 +31,15 @@
         </xs:simpleType>
       </xs:element>
       <xs:element type="xs:string" name="genre"/>
-      <xs:element type="priceType" name="price"/>
+      <xs:element name="price">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute type="xs:string" name="currency" use="optional"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="publish_date">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -58,6 +59,13 @@
         </xs:simpleType>
       </xs:element>
     </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="priceType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="currency" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
   <xs:complexType name="catalogType">
     <xs:sequence>

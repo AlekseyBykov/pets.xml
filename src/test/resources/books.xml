@@ -8,7 +8,7 @@
         <!ELEMENT genre (#PCDATA)>
         <!ELEMENT price (#PCDATA)>
         <!ATTLIST price
-                currency CDATA #REQUIRED>
+                currency CDATA #IMPLIED>
         <!ELEMENT publish_date (#PCDATA)>
         <!ELEMENT publisher (#PCDATA)>
         ]>
@@ -18,7 +18,7 @@
         <author>Thomas Erl</author>
         <title>Next Generation SOA</title>
         <genre>Computer</genre>
-        <price currency="USD">11.99</price>
+        <price>11.99</price>
         <publish_date>2014-10-31</publish_date>
         <publisher>Prentice Hall</publisher>
     </book>

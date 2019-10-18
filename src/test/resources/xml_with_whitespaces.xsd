@@ -43,9 +43,9 @@
       <xs:element name="publish_date">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:enumeration value="2014-10-31"/>
-            <xs:enumeration value="2014-10-16"/>
-            <xs:enumeration value="2018-04-16"/>
+            <xs:enumeration value="2014-10-31T01:17:22.239+03:00"/>
+            <xs:enumeration value="2014-10-16T11:16:41.128+03:00"/>
+            <xs:enumeration value="2018-04-16T13:26:31.178+03:00"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>

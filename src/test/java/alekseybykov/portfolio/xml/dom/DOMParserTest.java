@@ -47,7 +47,7 @@ class DOMParserTest {
         File documentWithWhitespacesFile = Paths.get("src", "test", "resources", "xml_with_whitespaces.xml").toFile();
         File documentWithoutWhitespacesFile = Paths.get("src", "test", "resources", "xml_without_whitespaces.xml").toFile();
 
-        xmlDocumentFilePath = Paths.get("src", "test", "resources", "generated");
+        xmlDocumentFilePath = Paths.get("src", "test", "resources", "temp");
         xmlDocumentFile = xmlDocumentFilePath.resolve("xml_document.xml").toFile();
 
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();

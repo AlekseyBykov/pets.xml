@@ -3,10 +3,7 @@
 //
 package alekseybykov.portfolio.xml.jaxb;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -21,6 +18,7 @@ import java.util.Date;
 @AllArgsConstructor
 @ToString
 @Getter
+@Builder
 public class Book {
 
     private String isbn;

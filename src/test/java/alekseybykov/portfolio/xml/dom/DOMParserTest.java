@@ -43,7 +43,7 @@ class DOMParserTest {
 
     @BeforeAll
     @SneakyThrows
-    private static void loadDocument() {
+    private static void loadDocuments() {
         File documentWithWhitespacesFile = Paths.get("src", "test", "resources", "xml_with_whitespaces.xml").toFile();
         File documentWithoutWhitespacesFile = Paths.get("src", "test", "resources", "xml_without_whitespaces.xml").toFile();
 
@@ -53,7 +53,7 @@ class DOMParserTest {
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
 
-        // all the document loaded in memory
+        // all the documents loaded in memory
         documentWithWhitespaces = documentBuilder.parse(documentWithWhitespacesFile);
         documentWithoutWhitespaces = documentBuilder.parse(documentWithoutWhitespacesFile);
     }

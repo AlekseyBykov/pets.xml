@@ -25,6 +25,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 
 /**
+ * Useful for working with large files.
+ *
  * @author  aleksey.n.bykov@gmail.com
  * @version 2019-10-18
  */

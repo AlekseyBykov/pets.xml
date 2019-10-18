@@ -29,6 +29,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
+ * Useful for working with small files.
+ *
  * @author  aleksey.n.bykov@gmail.com
  * @version 2019-10-16
  */

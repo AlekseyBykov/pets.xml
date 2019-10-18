@@ -22,6 +22,9 @@ import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
+ * Also can be used schemagen util for deserialization XSD
+ * schema to Java classes.
+ *
  * @author  aleksey.n.bykov@gmail.com
  * @version 2019-10-18
  */

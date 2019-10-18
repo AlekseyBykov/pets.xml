@@ -20,6 +20,9 @@ import java.util.Date;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
+ * Also can be used schemagen util to deserialization Java classes
+ * to XSD schema.
+ *
  * @author  aleksey.n.bykov@gmail.com
  * @version 2019-10-18
  */

@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.xml.jaxb;
 
 import lombok.SneakyThrows;
@@ -22,9 +19,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * Also can be used schemagen util for deserialization Java classes
  * to XSD schema.
- *
- * @author  aleksey.n.bykov@gmail.com
- * @version 2019-10-18
  */
 @DisplayName("Tests for JAXB serializer")
 class JAXBMarshallerTest {

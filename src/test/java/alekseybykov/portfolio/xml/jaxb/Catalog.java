@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.xml.jaxb;
 
 import lombok.Getter;
@@ -12,10 +9,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 2019-10-18
- */
 @XmlRootElement(name = "catalog")
 @NoArgsConstructor
 @Getter

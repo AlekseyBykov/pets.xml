@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.xml.sax;
 
 import alekseybykov.portfolio.xml.XmlElements;
@@ -26,9 +23,6 @@ import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 
 /**
  * Useful for working with large files.
- *
- * @author  aleksey.n.bykov@gmail.com
- * @version 2019-10-18
  */
 @DisplayName("Tests for parsing document by using SAX parser")
 class SAXParserTest {

@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.xml.jaxb;
 
 import lombok.*;
@@ -9,10 +6,6 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 2019-10-18
- */
 @XmlRootElement(name = "book")
 @NoArgsConstructor
 @AllArgsConstructor

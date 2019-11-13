@@ -1,15 +1,8 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.xml;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 2019-10-17
- */
 @Getter
 @RequiredArgsConstructor
 public enum XmlElements {

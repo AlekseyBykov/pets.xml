@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.xml.dom;
 
 import alekseybykov.portfolio.xml.XmlElements;
@@ -30,9 +27,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Useful for working with small files.
- *
- * @author  aleksey.n.bykov@gmail.com
- * @version 2019-10-16
  */
 @DisplayName("Tests for parsing document by using DOM parser")
 class DOMParserTest {

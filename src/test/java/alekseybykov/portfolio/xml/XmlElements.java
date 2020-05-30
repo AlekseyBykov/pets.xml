@@ -3,6 +3,10 @@ package alekseybykov.portfolio.xml;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * @author Aleksey Bykov
+ * @since 17.10.2019
+ */
 @Getter
 @RequiredArgsConstructor
 public enum XmlElements {

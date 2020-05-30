@@ -9,6 +9,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * @author Aleksey Bykov
+ * @since 18.10.2019
+ */
 @XmlRootElement(name = "catalog")
 @NoArgsConstructor
 @Getter

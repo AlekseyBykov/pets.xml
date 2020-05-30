@@ -21,6 +21,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Also can be used XJC util for deserialization XSD
  * schema to Java classes.
+ *
+ * @author Aleksey Bykov
+ * @since 18.10.2019
  */
 @DisplayName("Tests for JAXB deserializer")
 class JAXBUnmarshallerTest {

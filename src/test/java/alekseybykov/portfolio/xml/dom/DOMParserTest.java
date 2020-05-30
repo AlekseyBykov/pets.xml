@@ -27,6 +27,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Useful for working with small files.
+ *
+ * @author Aleksey Bykov
+ * @since 17.10.2019
  */
 @DisplayName("Tests for parsing document by using DOM parser")
 class DOMParserTest {

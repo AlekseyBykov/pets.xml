@@ -23,6 +23,9 @@ import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 
 /**
  * Useful for working with large files.
+ *
+ * @author Aleksey Bykov
+ * @since 18.10.2019
  */
 @DisplayName("Tests for parsing document by using SAX parser")
 class SAXParserTest {

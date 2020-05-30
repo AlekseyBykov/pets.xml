@@ -19,6 +19,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * Also can be used schemagen util for deserialization Java classes
  * to XSD schema.
+ *
+ * @author Aleksey Bykov
+ * @since 18.10.2019
  */
 @DisplayName("Tests for JAXB serializer")
 class JAXBMarshallerTest {
